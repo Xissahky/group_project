@@ -1,0 +1,228 @@
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff; /* белый фон */
+  padding: 0;
+}
+
+.chat-window.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color: #999; /* серый текст */
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  background: #f0f0f0; /* светло-серый фон для сообщений */
+  color: #000; /* чёрный текст */
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  max-width: 60%;
+  align-self: flex-start;
+}
+
+.message.mine {
+  background: #ff4d4d; /* красный фон для своих сообщений */
+  color: #fff; /* белый текст */
+  align-self: flex-end;
+}
+
+.message-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #000;
+}
+
+.message-input button {
+  padding: 8px 12px;
+  max-width: 60px;
+  font-size: 14px;
+  background-color: #d80000; /* насыщенно-красный */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px 20px;
+  height: 60px;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.back-button {
+  display: none;
+}
+
+.chat-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #000;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .chat-window {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+  }
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0 16px;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+  }
+
+  .back-button {
+    display: contents;
+    font-size: 24px;
+    width: 40px;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .chat-header-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .chat-header .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .chat-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+    white-space: nowrap;
+  }
+
+  .chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .message {
+    background: #f0f0f0;
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    font-size: 15px;
+    word-break: break-word;
+    align-self: flex-start;
+  }
+
+  .message.mine {
+    background: #ff4d4d;
+    color: #fff;
+    align-self: flex-end;
+  }
+
+  .message-input {
+    display: flex;
+    padding: 12px;
+    gap: 8px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+  }
+
+  .message-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .message-input button {
+    padding: 10px 12px;
+    font-size: 14px;
+    background-color: #d80000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .chat-window.empty {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+    color: #999;
+    padding: 20px;
+  }
+}

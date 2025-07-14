@@ -1,0 +1,299 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: auto;
+  margin-top: 80px;
+}
+
+.footer-left {
+  flex: 1 1 300px;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-quote {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.footer-quote-source {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.footer-middle {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-right {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 40 0 20px;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #000000;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.footer-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #e63946;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-links a:hover {
+  color: #e63946;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  font-size: 3rem;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #e63946;
+  color: #ffffff;
+  border-color: #e63946;
+  transform: scale(1.1);
+}
+
+.footer-bottom-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #000000;
+  height: 2rem;
+}
+
+.contact-us {
+  padding: 40px 24px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us h2 {
+  font-size: 1.8rem;
+  margin-bottom: 32px;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-left {
+  flex: 1 1 300px;
+}
+
+.contact-left iframe {
+  width: 100%;
+  height: 240px;
+  border: none;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.contact-address {
+  font-size: 1rem;
+}
+
+.contact-right {
+  flex: 1 1 300px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  border-color: #e63946;
+}
+
+.contact-right button {
+  align-self: flex-start;
+  padding: 10px 24px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-right button:hover {
+  background-color: #c71f2b;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 15px;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .footer-links {
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-title {
+    font-size: 1.4rem;
+  }
+
+  .footer-quote,
+  .footer-quote-source {
+    font-size: 0.9rem;
+  }
+
+  .social-icons {
+    gap: 12px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .footer-bottom-text {
+    font-size: 0.8rem;
+  }
+
+  .contact-us {
+    padding: 24px 16px;
+  }
+
+  .contact-us h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .contact-left iframe {
+    height: 180px;
+  }
+
+  .contact-address {
+    font-size: 0.9rem;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .contact-right button {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}

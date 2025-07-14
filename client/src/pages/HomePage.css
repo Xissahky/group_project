@@ -1,0 +1,125 @@
+:root {
+  --bg-image: url('./background.jpg');
+}
+
+.home-content {
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  color: #1e1e1e; /* заменено с белого на чёрный для читаемости */
+  background-blend-mode: overlay;
+}
+
+.overlay {
+  padding: 60px 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* белый с прозрачностью */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #b22222; /* акцентный приглушённый красный */
+}
+
+.welcome-text {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #1e1e1e;
+}
+
+.comments-section-wrapper {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fdfdfd;
+}
+
+.comments-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #b22222;
+}
+
+.comments-section {
+  width: 80%;
+  max-width: 1500px;
+  min-height: 60vh;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.comment-card {
+  background: #ffffff;
+  width: 30%;
+  height: 350px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.comment-photo {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #b22222;
+}
+
+.comment-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+.comment-body {
+  padding: 20px;
+  padding-top: 0;
+  font-size: 1rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .comments-title {
+    margin-bottom: 40px;
+  }
+
+  .comment-card {
+    width: 95%;
+    min-height: 320px;
+  }
+
+  .comments-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
