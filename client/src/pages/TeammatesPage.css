@@ -86,7 +86,6 @@
   display: none;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .recommendation-page {
     padding: 24px 12px;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ProfilePage.css";
-import defaultAvatar from "../images/default_avatar.jpg";
+import defaultAvatar from "../images/avatar.png";
 
 
 const specialties = {

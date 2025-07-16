@@ -1,10 +1,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #fdfdfd; /* светлый фон */
+  background: #fdfdfd; 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #1e1e1e; /* базовый цвет текста */
+  color: #1e1e1e; 
 }
 
 .feature-container {
@@ -18,7 +18,7 @@ body {
 
 .feature-title {
   font-size: 3rem;
-  color: #b22222; /* акцентный красный */
+  color: #b22222; 
   font-weight: bold;
   margin-bottom: 20px;
   line-height: 1.3;
@@ -26,7 +26,7 @@ body {
 
 .feature-subtitle {
   font-size: 1.2rem;
-  color: #333333; /* тёмно-серый для подзаголовков */
+  color: #333333; 
   margin-bottom: 40px;
   max-width: 800px;
   text-align: center;
@@ -42,7 +42,7 @@ body {
 }
 
 .feature-card {
-  background-color: #ffffff; /* карточка белая */
+  background-color: #ffffff;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -56,7 +56,7 @@ body {
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #8b0000; /* тёмно-красный иконки */
+  color: #8b0000; 
 }
 
 .feature-title {
@@ -85,12 +85,12 @@ button {
 }
 
 button.green {
-  background-color: #cbe2cb; /* нейтрально-зелёный (приглушённый) */
+  background-color: #cbe2cb; 
   color: #1e1e1e;
 }
 
 button.orange {
-  background-color: #f4c4b4; /* мягкий приглушённый оранжевый */
+  background-color: #f4c4b4; 
   color: #1e1e1e;
 }
 

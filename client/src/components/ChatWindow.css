@@ -2,7 +2,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #ffffff; /* белый фон */
+  background: #ffffff; 
   padding: 0;
 }
 
@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   font-style: italic;
-  color: #999; /* серый текст */
+  color: #999; 
 }
 
 .messages {
@@ -23,8 +23,8 @@
 }
 
 .message {
-  background: #f0f0f0; /* светло-серый фон для сообщений */
-  color: #000; /* чёрный текст */
+  background: #f0f0f0; 
+  color: #000; 
   padding: 10px;
   margin-bottom: 8px;
   border-radius: 10px;
@@ -33,8 +33,8 @@
 }
 
 .message.mine {
-  background: #ff4d4d; /* красный фон для своих сообщений */
-  color: #fff; /* белый текст */
+  background: #ff4d4d; 
+  color: #fff; 
   align-self: flex-end;
 }
 
@@ -57,7 +57,7 @@
   padding: 8px 12px;
   max-width: 60px;
   font-size: 14px;
-  background-color: #d80000; /* насыщенно-красный */
+  background-color: #d80000; 
   color: white;
   border: none;
   border-radius: 6px;
