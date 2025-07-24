@@ -24,7 +24,7 @@ const TeammatesPage = () => {
           setTeammates([]);
         }
       } catch (err) {
-        console.error("Failed to fetch teammates:", err);
+        console.error("Nie udało się pobrać partnerów do nauki:", err);
       }
     };
 
@@ -52,11 +52,11 @@ const TeammatesPage = () => {
       if (response.ok) {
         navigate("/chats");
       } else {
-        alert(data.message || "Failed to start chat");
+        alert(data.message || "Nie udało się rozpocząć czatu");
       }
     } catch (error) {
-      console.error("Error starting chat:", error);
-      alert("Something went wrong while starting chat.");
+      console.error("Błąd podczas rozpoczynania czatu:", error);
+      alert("Coś poszło nie tak podczas rozpoczynania czatu.");
     }
   };
 
@@ -64,48 +64,46 @@ const TeammatesPage = () => {
     if (currentIndex < teammates.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      alert("No more recommendations!");
+      alert("Brak dalszych rekomendacji!");
     }
   };
 
   return (
     <div className="recommendation-page">
-  <h2 className="title">STUDY PARTNERS FOR YOU</h2>
+      <h2 className="title">PARTNERZY DO NAUKI DLA CIEBIE</h2>
 
-  {currentTeammate ? (
-    <div className="card-wrapper">
+      {currentTeammate ? (
+        <div className="card-wrapper">
 
-      <button className="skip-button desktop-only" onClick={handleSkip}>✖</button>
+          <button className="skip-button desktop-only" onClick={handleSkip}>✖</button>
 
-      <div className="teammate-card">
-        <img src={currentTeammate.avatar} alt="Avatar" className="profile-img" />
-        <div className="card-content">
-          <h3>
-            {currentTeammate.first_name} {currentTeammate.last_name}, {currentTeammate.age || "N/A"}
-          </h3>
-          <p><strong>{currentTeammate.specialty || "No specialty"}</strong></p>
-          <hr />
-          <p>{currentTeammate.skills?.join(", ") || "No skills listed"}</p>
-          <hr />
-          <p>{currentTeammate.availability || "No preferred study time"}</p>
-          <hr />
-          <p>{currentTeammate.about || "No additional info"}</p>
+          <div className="teammate-card">
+            <img src={currentTeammate.avatar} alt="Avatar" className="profile-img" />
+            <div className="card-content">
+              <h3>
+                {currentTeammate.first_name} {currentTeammate.last_name}
+              </h3>
+              <p><strong>{currentTeammate.specialty || "Brak specjalizacji"}</strong></p>
+              <hr />
+              <p>{currentTeammate.skills?.join(", ") || "Brak umiejętności"}</p>
+              <hr />
+              <p>{currentTeammate.availability || "Brak preferowanego czasu nauki"}</p>
+              <hr />
+              <p>{currentTeammate.about || "Brak dodatkowych informacji"}</p>
+            </div>
+          </div>
+
+          <button className="like-button desktop-only" onClick={handleLike}>✔</button>
+
+          <div className="mobile-button-group mobile-only">
+            <button className="skip-button" onClick={handleSkip}>✖</button>
+            <button className="like-button" onClick={handleLike}>✔</button>
+          </div>
         </div>
-      </div>
-
-      <button className="like-button desktop-only" onClick={handleLike}>✔</button>
-
-      <div className="mobile-button-group mobile-only">
-        <button className="skip-button" onClick={handleSkip}>✖</button>
-        <button className="like-button" onClick={handleLike}>✔</button>
-      </div>
+      ) : (
+        <p>Nie znaleziono pasujących partnerów do nauki.</p>
+      )}
     </div>
-  ) : (
-    <p>No matching study partners found.</p>
-  )}
-</div>
-
-
   );
 };
 

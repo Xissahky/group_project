@@ -36,7 +36,7 @@ const ChatWindow = ({ chat, onBack }) => {
   };
 
   if (!chat) {
-    return <div className="chat-window empty">Select a chat to start messaging</div>;
+    return <div className="chat-window empty">Wybierz czat, aby rozpocząć rozmowę</div>;
   }
 
   return (
@@ -63,9 +63,9 @@ const ChatWindow = ({ chat, onBack }) => {
         <input
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Type your message..."
+          placeholder="Wpisz wiadomość..."
         />
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend}>Wyślij</button>
       </div>
     </div>
   );

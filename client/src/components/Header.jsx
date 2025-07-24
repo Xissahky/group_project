@@ -27,31 +27,31 @@ const Header = () => {
       <header className="header desktop-header">
         <div className="header-title">
           <Link to="/" className="nav-link">
-            STUDY BUDDY
+            KumpelEdu
           </Link>
         </div>
 
         <nav className="center-links-desktop">
           <Link to="/" className="nav-link">
-            Home
+            Strona główna
           </Link>
 
           {isLoggedIn ? (
             <>
               <Link to="/teammates" className="nav-link">
-                Matches
+                Dopasowania
               </Link>
               <Link to="/chats" className="nav-link">
-                Messages
+                Czat
               </Link>
             </>
           ) : (
             <>
               <Link to="/features" className="nav-link">
-                Features
+                Funkcje
               </Link>
               <Link to="/contact" className="nav-link">
-                Contact Us
+                Kontakt
               </Link>
             </>
           )}
@@ -65,10 +65,10 @@ const Header = () => {
           ) : (
             <>
               <Link to="/login" className="log-btn">
-                Login
+                Zaloguj się
               </Link>
               <Link to="/register" className="log-btn">
-                Register
+                Zarejestruj się
               </Link>
             </>
           )}
@@ -78,7 +78,7 @@ const Header = () => {
         <div className="mobile-header-content">
           <div className="header-title">
             <Link to="/" className="nav-link" onClick={closeMenu}>
-              STUDY BUDDY
+              KumpelEdu
             </Link>
           </div>
 
@@ -96,34 +96,34 @@ const Header = () => {
 
           <nav className={`center-links-mobile${menuOpen ? ' open' : ''}`}>
             <Link to="/" className="nav-link" onClick={closeMenu}>
-              Home
+              Strona główna
             </Link>
 
             {isLoggedIn ? (
               <>
                 <Link to="/teammates" className="nav-link" onClick={closeMenu}>
-                  Matches
+                  Dopasowania
                 </Link>
                 <Link to="/chats" className="nav-link" onClick={closeMenu}>
-                  Messages
+                  Czat
                 </Link>
                 <Link to="/profile" className="nav-link" onClick={closeMenu}>
-                  Profile
+                  Profil
                 </Link>
               </>
             ) : (
               <>
                 <Link to="/features" className="nav-link" onClick={closeMenu}>
-                  Features
+                  Funkcje
                 </Link>
                 <Link to="/contact" className="nav-link" onClick={closeMenu}>
-                  Contact Us
+                  Kontakt
                 </Link>
                 <Link to="/login" className="nav-link" onClick={closeMenu}>
-                  Login
+                  Zaloguj się
                 </Link>
                 <Link to="/register" className="nav-link" onClick={closeMenu}>
-                  Register
+                  Zarejestruj się
                 </Link>
               </>
             )}

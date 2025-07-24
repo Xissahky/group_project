@@ -5,45 +5,50 @@ export default function PrivacyPolicy() {
   return (
     <div className="page-container">
       <div className="content-box">
-        <h1 className="heading">Privacy Policy</h1>
+        <h1 className="heading">Polityka Prywatności</h1>
         <p className="paragraph">
-          Your privacy is important to us. This privacy policy explains how we
-          collect, use, and protect your information when you use our services.
+          Twoja prywatność jest dla nas ważna. Niniejsza polityka prywatności wyjaśnia,
+          w jaki sposób zbieramy, wykorzystujemy i chronimy Twoje dane podczas korzystania
+          z naszych usług.
         </p>
-        <h2 className="subheading">Information Collection</h2>
+
+        <h2 className="subheading">Gromadzenie informacji</h2>
         <p className="paragraph">
-          We collect information that you provide to us directly and data about
-          your usage of our service. This may include your name, email address,
-          IP address, browser type, device information, and access times. We also
-          gather data through cookies and similar technologies.
+          Zbieramy informacje, które podajesz nam bezpośrednio, a także dane dotyczące
+          korzystania z naszej usługi. Mogą to być: imię i nazwisko, adres e-mail, adres IP,
+          typ przeglądarki, informacje o urządzeniu i czasie dostępu. Korzystamy również z plików cookie
+          i podobnych technologii w celu pozyskiwania danych.
         </p>
-        <h2 className="subheading">Usage</h2>
+
+        <h2 className="subheading">Wykorzystanie danych</h2>
         <p className="paragraph">
-          We use your data to provide, maintain, and improve our services. This
-          includes personalizing your experience, conducting research and
-          analytics, communicating with you about updates or promotional offers,
-          and ensuring the security of our platform.
+          Wykorzystujemy Twoje dane, aby świadczyć, utrzymywać i ulepszać nasze usługi.
+          Obejmuje to personalizację doświadczenia użytkownika, prowadzenie badań i analiz,
+          komunikację z Tobą w sprawie aktualizacji lub ofert promocyjnych oraz zapewnienie
+          bezpieczeństwa naszej platformy.
         </p>
-        <h2 className="subheading">Data Sharing</h2>
+
+        <h2 className="subheading">Udostępnianie danych</h2>
         <p className="paragraph">
-          We do not sell your personal data. We may share it with third-party
-          providers who help us operate our services, such as hosting services,
-          analytics platforms, and customer support tools, all of whom are
-          obligated to keep your information secure.
+          Nie sprzedajemy Twoich danych osobowych. Możemy je udostępniać zaufanym podmiotom trzecim,
+          które wspierają nas w świadczeniu usług, takim jak dostawcy hostingu, platformy analityczne
+          oraz narzędzia wsparcia klienta – wszystkie te podmioty są zobowiązane do ochrony Twoich danych.
         </p>
-        <h2 className="subheading">Data Security</h2>
+
+        <h2 className="subheading">Bezpieczeństwo danych</h2>
         <p className="paragraph">
-          We implement a variety of security measures to protect your personal
-          information. This includes encryption, access controls, and regular
-          security audits. Despite our efforts, no system is 100% secure, and we
-          cannot guarantee absolute security.
+          Wdrażamy szereg środków bezpieczeństwa, aby chronić Twoje dane osobowe.
+          Obejmuje to szyfrowanie, kontrolę dostępu oraz regularne audyty bezpieczeństwa.
+          Mimo naszych starań, żaden system nie gwarantuje 100% bezpieczeństwa, dlatego
+          nie możemy zapewnić pełnej ochrony.
         </p>
-        <h2 className="subheading">Your Rights</h2>
+
+        <h2 className="subheading">Twoje prawa</h2>
         <p className="paragraph">
-          You have the right to access, correct, or delete your personal data. If
-          you would like to exercise any of these rights, please contact our
-          support team. You may also opt out of marketing communications at any
-          time.
+          Masz prawo do wglądu, poprawiania lub usunięcia swoich danych osobowych.
+          Jeśli chcesz skorzystać z któregokolwiek z tych praw, skontaktuj się z naszym
+          zespołem wsparcia. Możesz również w każdej chwili zrezygnować z otrzymywania
+          komunikatów marketingowych.
         </p>
       </div>
     </div>

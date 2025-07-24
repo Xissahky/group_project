@@ -47,7 +47,7 @@ const ChatList = ({ onSelectChat }) => {
     <div className="chat-list">
       <input
         type="text"
-        placeholder="Search"
+        placeholder="Szukaj"
         className="chat-search-input"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
@@ -68,7 +68,7 @@ const ChatList = ({ onSelectChat }) => {
               />
               <div>
                 <p>{chat.partner.first_name} {chat.partner.last_name}</p>
-                <small>{chat.partner.specialty || "No Specialty"}</small>
+                <small>{chat.partner.specialty || "Brak specjalizacji"}</small>
               </div>
             </>
           )}

@@ -8,25 +8,25 @@ export default function ContactUs() {
       <div className="contact-container">
         <div className="dev-card">
           <div className="dev-photo-block">
-            <img src={devPhoto} alt="Developer" className="dev-photo" />
+            <img src={devPhoto} alt="Deweloperzy" className="dev-photo" />
             <div>
-                <h2 className="dev-heading">Why I Created Study Buddy</h2>
-                <p className="dev-comment">
-                I developed Study Buddy to bring students together in a community
-                where collaboration fuels creativity. By making it easy to connect
-                on shared interests, I hope to inspire teamwork and meaningful
-                learning experiences for everyone.
-                </p>
+              <h2 className="dev-heading">Dlaczego stworzyliśmy KumpelEdu</h2>
+              <p className="dev-comment">
+                Jesteśmy dwójką pasjonatów technologii, którzy stworzyli KumpelEdu
+                jako projekt uczelniany. Szybko jednak zauważyliśmy jego potencjał
+                i postanowiliśmy rozwijać go dalej. Naszym celem jest budowanie
+                społeczności, która wspiera się nawzajem w nauce, dzieleniu się
+                wiedzą i wspólnej pracy nad projektami.
+              </p>
             </div>
-            
           </div>
           <div className="contact-details-block">
-            <h2 className="dev-heading">Contact Me</h2>
+            <h2 className="dev-heading">Skontaktuj się z nami</h2>
             <div className="contact-details">
-              <p>Have feedback or found a bug? Reach out:</p>
+              <p>Masz sugestię lub znalazłeś błąd? Daj nam znać:</p>
               <ul>
                 <li>Email: <a href="mailto:developer@studybuddy.com">developer@studybuddy.com</a></li>
-                <li>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                <li>Telefon: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
                 <li>GitHub: <a href="https://github.com/studybuddy">github.com/studybuddy</a></li>
               </ul>
             </div>

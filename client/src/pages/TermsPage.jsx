@@ -5,43 +5,36 @@ export default function TermsOfService() {
   return (
     <div className="page-container">
       <div className="content-box">
-        <h1 className="heading">Terms of Service</h1>
+        <h1 className="heading">Regulamin</h1>
         <p className="paragraph">
-          By using our services, you agree to the following terms and conditions.
-          Please read them carefully.
+          Korzystając z naszych usług, akceptujesz poniższe warunki. Prosimy o uważne zapoznanie się z nimi.
         </p>
-        <h2 className="subheading">Use of Service</h2>
+        <h2 className="subheading">Korzystanie z usług</h2>
         <p className="paragraph">
-          You agree to use our services only for lawful purposes and in
-          accordance with these terms. You may not use the service in any way
-          that could damage, disable, overburden, or impair the functionality of
-          our systems.
+          Zobowiązujesz się do korzystania z naszych usług wyłącznie w sposób zgodny z prawem oraz niniejszym regulaminem.
+          Zabrania się wykorzystywania usług w sposób, który mógłby uszkodzić, przeciążyć lub zakłócić działanie naszych systemów.
         </p>
-        <h2 className="subheading">Account Responsibility</h2>
+        <h2 className="subheading">Odpowiedzialność za konto</h2>
         <p className="paragraph">
-          You are responsible for maintaining the confidentiality of your account
-          and password. You agree to accept responsibility for all activities
-          that occur under your account. We are not liable for any loss or
-          damage arising from your failure to protect your login information.
+          Jesteś odpowiedzialny za zachowanie poufności swojego konta i hasła.
+          Akceptujesz odpowiedzialność za wszelkie działania wykonywane z użyciem Twojego konta.
+          Nie ponosimy odpowiedzialności za jakiekolwiek straty lub szkody wynikające z niezabezpieczenia danych logowania.
         </p>
-        <h2 className="subheading">Content Ownership</h2>
+        <h2 className="subheading">Własność treści</h2>
         <p className="paragraph">
-          All content provided through the service remains the property of its
-          respective owners. You agree not to copy, reproduce, or redistribute
-          any content without proper authorization.
+          Wszystkie treści udostępnione w ramach usługi pozostają własnością ich właścicieli.
+          Zobowiązujesz się nie kopiować, nie powielać ani nie rozpowszechniać treści bez odpowiedniego upoważnienia.
         </p>
-        <h2 className="subheading">Modifications</h2>
+        <h2 className="subheading">Zmiany w regulaminie</h2>
         <p className="paragraph">
-          We reserve the right to modify these terms at any time. Changes will be
-          effective immediately upon posting to our website. Continued use of the
-          service after changes are posted constitutes your acceptance of the
-          revised terms.
+          Zastrzegamy sobie prawo do wprowadzania zmian w regulaminie w dowolnym momencie.
+          Zmiany wchodzą w życie natychmiast po opublikowaniu ich na naszej stronie internetowej.
+          Dalsze korzystanie z usług po wprowadzeniu zmian oznacza akceptację nowego regulaminu.
         </p>
-        <h2 className="subheading">Termination</h2>
+        <h2 className="subheading">Zakończenie korzystania</h2>
         <p className="paragraph">
-          We reserve the right to suspend or terminate your access to the service
-          at our sole discretion, with or without notice, if you violate these
-          terms or engage in harmful conduct.
+          Zastrzegamy sobie prawo do zawieszenia lub zakończenia Twojego dostępu do usług według własnego uznania,
+          z lub bez wcześniejszego powiadomienia, w przypadku naruszenia regulaminu lub zachowań szkodliwych.
         </p>
       </div>
     </div>

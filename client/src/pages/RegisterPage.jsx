@@ -18,6 +18,8 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    let attempts = 0;
+    const maxAttempts = 10;
     const checkTurnstile = () => {
       if (window.turnstile) {
         window.turnstile.render('#turnstile-container', {
@@ -29,7 +31,7 @@ const RegisterPage = () => {
         attempts++;
         setTimeout(checkTurnstile, 500);
       } else {
-        console.error('Turnstile failed to load after multiple attempts.');
+        console.error('Nie udało się załadować CAPTCHA po wielu próbach.');
       }
     };
     checkTurnstile();
@@ -40,41 +42,41 @@ const RegisterPage = () => {
     const nameRegex = /^[A-Za-z]+$/;
 
     if (!form.firstName.trim()) {
-      newErrors.firstName = 'First name is required';
+      newErrors.firstName = 'Imię jest wymagane';
     } else if (!nameRegex.test(form.firstName)) {
-      newErrors.firstName = 'First name must contain only letters';
+      newErrors.firstName = 'Imię może zawierać tylko litery';
     }
 
     if (!form.lastName.trim()) {
-      newErrors.lastName = 'Last name is required';
+      newErrors.lastName = 'Nazwisko jest wymagane';
     } else if (!nameRegex.test(form.lastName)) {
-      newErrors.lastName = 'Last name must contain only letters';
+      newErrors.lastName = 'Nazwisko może zawierać tylko litery';
     }
 
     if (!form.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'Email jest wymagany';
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = 'Nieprawidłowy adres email';
     }
 
     if (!form.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = 'Hasło jest wymagane';
     } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/.test(form.password)) {
       newErrors.password =
-        'Password must be at least 8 characters and include uppercase, lowercase letters and numbers';
+        'Hasło musi mieć co najmniej 8 znaków, zawierać wielką i małą literę oraz cyfrę';
     }
 
     if (form.password !== form.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
+      newErrors.confirmPassword = 'Hasła nie są zgodne';
     }
 
     if (!form.agreeToTerms) {
-      newErrors.agreeToTerms = 'You must agree to the Terms and Privacy Policy';
+      newErrors.agreeToTerms = 'Musisz zaakceptować Regulamin i Politykę prywatności';
     }
 
     const token = window.turnstile?.getResponse();
     if (!token) {
-      newErrors.captcha = 'Please complete the CAPTCHA';
+      newErrors.captcha = 'Ukończ CAPTCHA';
     }
 
     setErrors(newErrors);
@@ -106,7 +108,7 @@ const RegisterPage = () => {
           password: form.password,
           firstName: form.firstName,
           lastName: form.lastName,
-          captchaToken: token, 
+          captchaToken: token,
         }),
       });
 
@@ -116,23 +118,23 @@ const RegisterPage = () => {
         localStorage.setItem('token', data.token);
         navigate('/');
       } else {
-        setErrors({ apiError: data.message });
+        setErrors({ apiError: data.message || 'Rejestracja nie powiodła się' });
       }
     } catch (error) {
-      console.error('Registration error:', error);
-      setErrors({ apiError: 'Registration failed. Try again later.' });
+      console.error('Błąd rejestracji:', error);
+      setErrors({ apiError: 'Rejestracja nie powiodła się. Spróbuj ponownie później.' });
     }
   };
 
   return (
     <div className="register-wrapper">
-      <h2 className="register-heading">JOIN NOW</h2>
+      <h2 className="register-heading">DOŁĄCZ TERAZ</h2>
       <form className="register-form" onSubmit={handleRegister}>
         <div className="row">
           <div className="input-group">
             <input
               type="text"
-              placeholder="First name"
+              placeholder="Imię"
               name="firstName"
               value={form.firstName}
               onChange={handleChange}
@@ -144,7 +146,7 @@ const RegisterPage = () => {
           <div className="input-group">
             <input
               type="text"
-              placeholder="Last name"
+              placeholder="Nazwisko"
               name="lastName"
               value={form.lastName}
               onChange={handleChange}
@@ -170,7 +172,7 @@ const RegisterPage = () => {
           <div className="input-group">
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Hasło"
               name="password"
               value={form.password}
               onChange={handleChange}
@@ -182,7 +184,7 @@ const RegisterPage = () => {
           <div className="input-group">
             <input
               type="password"
-              placeholder="Confirm Password"
+              placeholder="Potwierdź hasło"
               name="confirmPassword"
               value={form.confirmPassword}
               onChange={handleChange}
@@ -194,7 +196,7 @@ const RegisterPage = () => {
 
         <div className="input-group cf-turnstile">
           <div id="turnstile-container" />
-          {!turnstileLoaded && <p>Loading CAPTCHA...</p>}
+          {!turnstileLoaded && <p>Ładowanie CAPTCHA...</p>}
           {errors.captcha && <p className="error-text">{errors.captcha}</p>}
         </div>
 
@@ -207,14 +209,14 @@ const RegisterPage = () => {
             onChange={handleChange}
           />
           <label htmlFor="agreeToTerms">
-            I agree to the <a href="/Terms">Terms</a> and <a href="/Privacy">Privacy Policy</a>
+            Akceptuję <a href="/Terms">Regulamin</a> i <a href="/Privacy">Politykę prywatności</a>
           </label>
         </div>
         {errors.agreeToTerms && <p className="error-text">{errors.agreeToTerms}</p>}
 
         {errors.apiError && <p className="error-text">{errors.apiError}</p>}
 
-        <button type="submit" className="register-btn">Sign Up</button>
+        <button type="submit" className="register-btn">Zarejestruj się</button>
       </form>
     </div>
   );

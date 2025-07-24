@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./ProfilePage.css";
 import defaultAvatar from "../images/avatar.png";
 
-
 const specialties = {
-  "Computer Science": ["Algorithms", "Data Structures", "Web Development", "Databases", "AI"],
-  "Design": ["Typography", "UX/UI", "Illustration", "Animation"],
-  "Business": ["Marketing", "Finance", "Project Management"],
-  "Engineering": ["Math", "Physics", "Mechanics", "CAD"],
+  "Computer Science": ["Algorytmy", "Struktury danych", "Tworzenie stron WWW", "Bazy danych", "Sztuczna inteligencja"],
+  "Design": ["Typografia", "UX/UI", "Ilustracja", "Animacja"],
+  "Business": ["Marketing", "Finanse", "Zarządzanie projektami"],
+  "Engineering": ["Matematyka", "Fizyka", "Mechanika", "CAD"],
 };
 
-const sections = ["Profile", "Account Security", "Privacy", "Delete Account"];
+const sections = ["Profil", "Bezpieczeństwo konta", "Prywatność", "Usuń konto"];
 
 export default function ProfilePage() {
   const [form, setForm] = useState({
@@ -26,7 +25,7 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [passwordForm, setPasswordForm] = useState({ currentPassword: "", newPassword: "" });
   const [deletePassword, setDeletePassword] = useState("");
-  const [activeSection, setActiveSection] = useState("Profile");
+  const [activeSection, setActiveSection] = useState("Profil");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -88,7 +87,7 @@ export default function ProfilePage() {
       },
       body: JSON.stringify(form),
     });
-    alert("Profile updated!");
+    alert("Profil zaktualizowany!");
   };
 
   const handlePasswordChange = async () => {
@@ -102,17 +101,17 @@ export default function ProfilePage() {
       body: JSON.stringify(passwordForm),
     });
     if (res.ok) {
-      alert("Password changed!");
+      alert("Hasło zostało zmienione!");
       setPasswordForm({ currentPassword: "", newPassword: "" });
     } else {
       const err = await res.json();
-      alert(err.error || "Error updating password");
+      alert(err.error || "Błąd podczas zmiany hasła");
     }
   };
 
   const handleAccountDelete = async (e) => {
     e.preventDefault();
-    if (!window.confirm("Are you sure you want to delete your account?")) return;
+    if (!window.confirm("Czy na pewno chcesz usunąć swoje konto?")) return;
     const token = localStorage.getItem("token");
     const res = await fetch("http://localhost:5000/api/profile/delete", {
       method: "DELETE",
@@ -123,28 +122,24 @@ export default function ProfilePage() {
       body: JSON.stringify({ password: deletePassword }),
     });
     if (res.ok) {
-      alert("Account deleted.");
+      alert("Konto zostało usunięte.");
       localStorage.removeItem("token");
       window.location.href = "/";
     } else {
       const err = await res.json();
-      alert(err.error || "Error deleting account");
+      alert(err.error || "Błąd podczas usuwania konta");
     }
   };
 
   const availableSkills = specialties[form.specialty] || [];
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Ładowanie...</p>;
 
   return (
     <div className="profile-page">
       <aside className="sidebar">
         <div className="sidebar-profile">
-          <img
-            src={form.avatar || defaultAvatar}
-            alt="Avatar"
-            className="sidebar-avatar"
-          />
+          <img src={form.avatar || defaultAvatar} alt="Avatar" className="sidebar-avatar" />
           <p className="sidebar-name">
             {form.firstName} {form.lastName}
           </p>
@@ -169,17 +164,13 @@ export default function ProfilePage() {
             window.location.href = "/";
           }}
         >
-          Log Out
+          Wyloguj się
         </button>
       </aside>
 
       <header className="sidebar mobile-header">
         <div className="sidebar-profile">
-          <img
-            src={form.avatar || defaultAvatar}
-            alt="Avatar"
-            className="sidebar-avatar"
-          />
+          <img src={form.avatar || defaultAvatar} alt="Avatar" className="sidebar-avatar" />
           <span className="sidebar-name">
             {form.firstName} {form.lastName}
           </span>
@@ -188,7 +179,6 @@ export default function ProfilePage() {
         <button
           className={`burger-icon${menuOpen ? " open" : ""}`}
           onClick={() => setMenuOpen((o) => !o)}
-          
         >
           menu
         </button>
@@ -215,73 +205,48 @@ export default function ProfilePage() {
               window.location.href = "/";
             }}
           >
-            Log Out
+            Wyloguj się
           </button>
         </div>
       </header>
 
       <div className="profile-content">
-        {activeSection === "Profile" && (
+        {activeSection === "Profil" && (
           <div className="profile-container">
-            <h2>My Profile</h2>
+            <h2>Mój profil</h2>
 
             <div className="avatar-section">
-              <img
-                src={form.avatar ? form.avatar : defaultAvatar}
-                alt="Avatar"
-                className="sidebar-avatar"
-              />
+              <img src={form.avatar ? form.avatar : defaultAvatar} alt="Avatar" className="sidebar-avatar" />
               <label className="upload-btn">
-                Set new photo
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleAvatarUpload}
-                  hidden
-                />
+                Zmień zdjęcie
+                <input type="file" accept="image/*" onChange={handleAvatarUpload} hidden />
               </label>
             </div>
 
             <form className="profile-form" onSubmit={handleSubmit}>
-              <label>First Name:</label>
-              <input
-                name="firstName"
-                value={form.firstName}
-                onChange={handleChange}
-              />
+              <label>Imię:</label>
+              <input name="firstName" value={form.firstName} onChange={handleChange} />
 
-              <label>Last Name:</label>
-              <input
-                name="lastName"
-                value={form.lastName}
-                onChange={handleChange}
-              />
+              <label>Nazwisko:</label>
+              <input name="lastName" value={form.lastName} onChange={handleChange} />
 
-              <label>About Me:</label>
+              <label>O mnie:</label>
               <textarea name="about" value={form.about} onChange={handleChange} />
 
               <label>Email:</label>
               <input value={form.email} disabled />
 
-              <label>Specialty:</label>
-              <select
-                name="specialty"
-                value={form.specialty}
-                onChange={handleChange}
-              >
-                <option value="" disabled>
-                  Select your specialty
-                </option>
+              <label>Specjalizacja:</label>
+              <select name="specialty" value={form.specialty} onChange={handleChange}>
+                <option value="" disabled>Wybierz swoją specjalizację</option>
                 {Object.keys(specialties).map((spec) => (
-                  <option key={spec} value={spec}>
-                    {spec}
-                  </option>
+                  <option key={spec} value={spec}>{spec}</option>
                 ))}
               </select>
 
               {form.specialty && (
                 <>
-                  <label>Subjects:</label>
+                  <label>Tematy:</label>
                   <div className="checkbox-group">
                     {availableSkills.map((skill) => (
                       <label key={skill}>
@@ -297,115 +262,70 @@ export default function ProfilePage() {
                 </>
               )}
 
-              <label>Study Availability:</label>
-              <input
-                name="availability"
-                value={form.availability}
-                onChange={handleChange}
-              />
+              <label>Dostępność do nauki:</label>
+              <input name="availability" value={form.availability} onChange={handleChange} />
 
-              <button type="submit">Update</button>
+              <button type="submit">Zaktualizuj</button>
             </form>
           </div>
         )}
 
-        {activeSection === "Account Security" && (
+        {activeSection === "Bezpieczeństwo konta" && (
           <div className="profile-container">
-            <h3>Change Password</h3>
+            <h3>Zmień hasło</h3>
             <div className="password-form">
               <input
                 type="password"
-                placeholder="Current password"
+                placeholder="Obecne hasło"
                 value={passwordForm.currentPassword}
-                onChange={(e) =>
-                  setPasswordForm((prev) => ({
-                    ...prev,
-                    currentPassword: e.target.value,
-                  }))
-                }
+                onChange={(e) => setPasswordForm((prev) => ({
+                  ...prev, currentPassword: e.target.value,
+                }))}
               />
               <input
                 type="password"
-                placeholder="New password"
+                placeholder="Nowe hasło"
                 value={passwordForm.newPassword}
-                onChange={(e) =>
-                  setPasswordForm((prev) => ({
-                    ...prev,
-                    newPassword: e.target.value,
-                  }))
-                }
+                onChange={(e) => setPasswordForm((prev) => ({
+                  ...prev, newPassword: e.target.value,
+                }))}
               />
               <button type="button" onClick={handlePasswordChange}>
-                Change Password
+                Zmień hasło
               </button>
             </div>
           </div>
         )}
 
-        {activeSection === "Privacy" && (
+        {activeSection === "Prywatność" && (
           <div className="profile-container">
-            <h2>Privacy Policy</h2>
-            <p>
-              Your privacy is important to us. This privacy policy explains how we
-              collect, use, and protect your information when you use our services.
-            </p>
-
-            <h3>Information Collection</h3>
-            <p>
-              We collect information that you provide to us directly and data about
-              your usage of our service. This may include your name, email address,
-              IP address, browser type, device information, and access times. We also
-              gather data through cookies and similar technologies.
-            </p>
-
-            <h3>Usage</h3>
-            <p>
-              We use your data to provide, maintain, and improve our services. This
-              includes personalizing your experience, conducting research and
-              analytics, communicating with you about updates or promotional offers,
-              and ensuring the security of our platform.
-            </p>
-
-            <h3>Data Sharing</h3>
-            <p>
-              We do not sell your personal data. We may share it with third-party
-              providers who help us operate our services, such as hosting services,
-              analytics platforms, and customer support tools, all of whom are
-              obligated to keep your information secure.            
-            </p>
-
-            <h3>Data Security</h3>
-            <p>
-              We implement a variety of security measures to protect your personal
-              information. This includes encryption, access controls, and regular
-              security audits. Despite our efforts, no system is 100% secure, and we
-              cannot guarantee absolute security.
-            </p>
-
-            <h3>Your Rights</h3>
-            <p>
-              You have the right to access, correct, or delete your personal data. If
-              you would like to exercise any of these rights, please contact our
-              support team. You may also opt out of marketing communications at any
-              time.
-            </p>
+            <h2>Polityka prywatności</h2>
+            <p>Twoja prywatność jest dla nas ważna. Ta polityka opisuje, jak gromadzimy, wykorzystujemy i chronimy Twoje dane.</p>
+            <h3>Gromadzenie informacji</h3>
+            <p>Zbieramy dane podane bezpośrednio przez Ciebie oraz dane o korzystaniu z platformy (np. adres IP, typ przeglądarki).</p>
+            <h3>Wykorzystanie danych</h3>
+            <p>Wykorzystujemy dane do ulepszania usług, personalizacji, analizy i komunikacji.</p>
+            <h3>Udostępnianie danych</h3>
+            <p>Nie sprzedajemy danych. Udostępniamy je tylko zaufanym partnerom technologicznym.</p>
+            <h3>Bezpieczeństwo danych</h3>
+            <p>Stosujemy szyfrowanie, kontrole dostępu i audyty bezpieczeństwa.</p>
+            <h3>Twoje prawa</h3>
+            <p>Masz prawo do wglądu, poprawiania i usunięcia danych. Skontaktuj się z nami, jeśli chcesz z nich skorzystać.</p>
           </div>
         )}
 
-        {activeSection === "Delete Account" && (
+        {activeSection === "Usuń konto" && (
           <form className="profile-container" onSubmit={handleAccountDelete}>
-            <h3>Delete Account</h3>
-            <p>Please confirm by entering your password:</p>
+            <h3>Usuń konto</h3>
+            <p>Potwierdź, wpisując swoje hasło:</p>
             <div className="password-form">
               <input
                 type="password"
-                placeholder="Your Password"
+                placeholder="Twoje hasło"
                 value={deletePassword}
                 onChange={(e) => setDeletePassword(e.target.value)}
               />
-              <button type="submit" className="danger">
-                Delete My Account
-              </button>
+              <button type="submit" className="danger">Usuń moje konto</button>
             </div>
           </form>
         )}
